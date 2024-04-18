@@ -25,7 +25,6 @@ def main():
 
     # # Used to generate LPF for system accuracy test
     # h = sig.firwin(numtaps, 3000, fs=48000)
-    # h[2048:2048+2048] = 0
     
     # Code to write n .coe files
     numfilters = 8
