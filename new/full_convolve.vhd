@@ -271,13 +271,13 @@ begin
         
         if freq_count > 2083 then   -- generate frequency of 48 kHz
             -- set block mem write address
-            addra <= std_logic_vector(to_unsigned(count, 14));
             dina <= tdatai; -- load audio input data to be written to block mem
             wea <= "1";     -- write data to block mem
             idata1 <= tdatai;  -- load audio sample to first FIR block
             freq_count <= 0;   -- reset freq counter
             count <= count + 1; -- incrememnt sample counter
             read_count <= 0;    -- reset read counter
+            address <= count;
         else
             freq_count <= freq_count + 1; -- increment frequency counter
         end if;
